@@ -1,3 +1,15 @@
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a routerLink="products" class="nav-link" routerLinkActive="active">Product List</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="add" class="nav-link" routerLinkActive="active">Add Product</a>
+    </li>
+     </ul>
+</nav>
 <h1 style="text-align:center">
   Demo Angular Login
 </h1>
@@ -14,7 +26,7 @@
     </div>
 
     <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-      <input type="password" placeholder="Password" formControlName="password" pattern="^[a-zA-Z]+$">
+      <input type="password" placeholder="Password" formControlName="password">
     </p>
 
     <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
@@ -22,7 +34,7 @@
     </div>
 
     <p>
-      <input type="submit" value="LOGIN :)">
+      <input type="submit" [routerLink]="['/products']" value="LOGIN :)">
     </p>
   </form>
 </div>

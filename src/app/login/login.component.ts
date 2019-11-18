@@ -39,17 +39,20 @@ export class LoginComponent implements OnInit {
       data.forEach(element => {
         this.loginuser.roleid==element["roleid"];
         console.log(this.loginuser.roleid);
-        if(this.loginuser.roleid==1)
+        if(this.loginuser.roleid==2)
         {
           this.router.navigate(['products'])
         }
+        else if(this.loginuser.roleid==3)
+         { this.router.navigate(['user'])
+        }
         else{
-          this.router.navigate([''])
+          this.router.navigate(['login'])
         }
         
       });
     })
     
   }
-
 }
+

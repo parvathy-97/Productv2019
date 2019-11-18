@@ -4,20 +4,22 @@ import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
-  {path:'',pathMatch:'full',redirectTo:'login'},
- {path:'login',component:LoginComponent },
- {path:'products',component:ProductListComponent},
- {path:'add',component:ProductAddComponent},
- {path:'update/:id',component:ProductEditComponent}
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'login', component: LoginComponent },
+  { path: 'products', component: ProductListComponent },
+  { path: 'add', component: ProductAddComponent },
+  { path: 'update/:id', component: ProductEditComponent },
+  { path: 'user', component: UserComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,
     {
-      onSameUrlNavigation :'reload'
+      onSameUrlNavigation: 'reload'
     })],
   exports: [RouterModule]
 })
