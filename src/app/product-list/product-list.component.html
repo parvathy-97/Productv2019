@@ -1,0 +1,32 @@
+<div>
+    <table class="table  table-striped table-dark">
+        <thead>
+            <th>ProductID</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Mfg Date</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pro of products ">
+                <td>{{pro.productid}}</td>
+                <td>{{pro.productname}}</td>
+                <td>{{pro.productdescription}}</td>
+                <td>{{pro.productDateStr}}</td>
+                <td>{{pro.productprice}}</td>
+                <button [routerLink]="['/update',pro.productid]" class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger" style="margin-left: 20px" mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle" [popoverMessage]="popoverMessage" placement="left"
+                    (confirm)="confirmClicked = true" (cancel)="cancelClicked = true"
+                    confirmButtonType="warning"
+                    cancelButtonType="default"
+                    (click)="confirmClicked=false;
+                    cancelClicked=false"
+                    [appendToBody]="true"
+                    (confirm)=deleteProduct(pro.productid)
+                    >Delete</button>
+            </tr>
+        </tbody>
+    </table>
+</div>
